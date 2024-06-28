@@ -102,7 +102,7 @@ const BarCharts = ({ isDashboard = false }) => {
         legendOffset: -40,
         truncateTickAt: 0,
       }}
-      enableTotals={true}
+      enableTotals={isDashboard ? undefined : true}
       labelSkipWidth={5}
       labelSkipHeight={12}
       labelTextColor={{

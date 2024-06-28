@@ -1,7 +1,7 @@
 import { ResponsiveChoropleth } from '@nivo/geo';
 import { useTheme } from '@mui/material';
 import { tokens } from '../theme';
-import { geoFeatures } from '../data/mockData';
+import { geoFeatures } from '../data/mockGeoFeatures';
 import { mockGeographyData as data } from '../data/mockData';
 const GeoCharts = ({ isDashboard = false }) => {
   const theme = useTheme();
@@ -55,7 +55,7 @@ const GeoCharts = ({ isDashboard = false }) => {
           anchor: 'bottom-left',
           direction: 'column',
           justify: true,
-          translateX: 20,
+          translateX: isDashboard ? '-200' : 20,
           translateY: -100,
           itemsSpacing: 0,
           itemWidth: 94,
@@ -64,6 +64,7 @@ const GeoCharts = ({ isDashboard = false }) => {
           itemTextColor: '#444444',
           itemOpacity: 0.85,
           symbolSize: 18,
+
           effects: [
             {
               on: 'hover',
